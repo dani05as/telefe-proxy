@@ -4,7 +4,6 @@ import threading
 import time
 
 app = Flask(__name__)
-
 stream_url = None
 
 def renovar_token():
@@ -20,6 +19,7 @@ def renovar_token():
                     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36',
                     'Content-Type': 'application/json',
                     'Accept': '*/*',
+                    'Cookie': 'AWSALBTG=JEfqXUW4NpTRWlKZEt+HrPk106t2heNXR6BQFu+5ebKZIvUPAG9KgAIb8ofX1M9tbTd920jEOuox+U8WyhmCgOYJlLQwqjYFTshVihBVaw9MFTuVYU7g1lNUH7C7iQe4kB2xwRaAVRGlyhy9x5xRHBpHaFPbX/Cdn+VgjpVji8IxhepLRMY=; AWSALBTGCORS=JEfqXUW4NpTRWlKZEt+HrPk106t2heNXR6BQFu+5ebKZIvUPAG9KgAIb8ofX1M9tbTd920jEOuox+U8WyhmCgOYJlLQwqjYFTshVihBVaw9MFTuVYU7g1lNUH7C7iQe4kB2xwRaAVRGlyhy9x5xRHBpHaFPbX/Cdn+VgjpVji8IxhepLRMY=; AWSALB=o98QJYNu01MD6XwHugXEpgBDPoRlc1jcG6k/1VbXjIvXsuUPY7OYGXXK7VxLl9y8z53kxgyTLAvv0f8F05duaFLFpCb36dyyMJrAHSNngmdr0pJXjdqX9TDUs8kA; AWSALBCORS=o98QJYNu01MD6XwHugXEpgBDPoRlc1jcG6k/1VbXjIvXsuUPY7OYGXXK7VxLl9y8z53kxgyTLAvv0f8F05duaFLFpCb36dyyMJrAHSNngmdr0pJXjdqX9TDUs8kA'
                 }
             )
             data = response.json()
