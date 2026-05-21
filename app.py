@@ -1,5 +1,20 @@
 from flask import Flask, jsonify
 import requests
+import threading
+import time
+
+def keep_alive():
+    while True:
+        try:
+            requests.get('https://telefe-proxy.onrender.com/stream')
+            print("Ping enviado")
+        except:
+            pass
+        time.sleep(600)
+
+thread = threading.Thread(target=keep_alive)
+thread.daemon = True
+thread.start()
 
 app = Flask(__name__)
 
