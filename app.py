@@ -3,6 +3,20 @@ import requests
 import threading
 import time
 
+TELEGRAM_TOKEN = '8623468208:AAF63NWKDZTHVuOK01yT0GPrzG8pwg21ewA'
+TELEGRAM_CHAT_ID = '8750567244'
+
+def enviar_telegram(mensaje):
+    try:
+        requests.get(
+            f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage',
+            params={'chat_id': TELEGRAM_CHAT_ID, 'text': mensaje}
+        )
+    except:
+        pass
+
+app = Flask(__name__)
+
 def keep_alive():
     while True:
         try:
@@ -15,8 +29,6 @@ def keep_alive():
 thread = threading.Thread(target=keep_alive)
 thread.daemon = True
 thread.start()
-
-app = Flask(__name__)
 
 @app.route('/stream')
 def get_stream():
@@ -34,13 +46,12 @@ def get_stream():
             },
             timeout=10
         )
-        print(f"Status: {response.status_code}")
-        print(f"Response: {response.text}")
         data = response.json()
         url = data.get('url')
         if url:
             return jsonify({"stream_url": url})
-        return jsonify({"error": "No url en respuesta", "data": data}), 503
+        enviar_telegram('⚠️ Telefe TV: Las cookies expiraron, hay que actualizarlas.')
+        return jsonify({"error": "Stream no disponible"}), 503
     except Exception as e:
-        print(f"Error: {e}")
+        enviar_telegram(f'⚠️ Telefe TV: Error en el servidor: {str(e)}')
         return jsonify({"error": str(e)}), 503
