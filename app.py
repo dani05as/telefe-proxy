@@ -29,15 +29,13 @@ def renovar_token():
             print(f"Error renovando token: {e}")
         time.sleep(1800)
 
+# Iniciar hilo al cargar el módulo
+thread = threading.Thread(target=renovar_token)
+thread.daemon = True
+thread.start()
+
 @app.route('/stream')
 def get_stream():
     if stream_url:
         return jsonify({"stream_url": stream_url})
     return jsonify({"error": "Stream no disponible"}), 503
-
-if __name__ == '__main__':
-    thread = threading.Thread(target=renovar_token)
-    thread.daemon = True
-    thread.start()
-    renovar_token()
-    app.run(host='0.0.0.0', port=5000)
