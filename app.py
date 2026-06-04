@@ -61,7 +61,9 @@ def get_stream():
             },
             timeout=10
         )
-
+        
+        print(f"Status: {response.status_code}")
+        print(f"Response: {response.text}")
         data = response.json()
 
         url = data.get("url")
