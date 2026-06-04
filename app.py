@@ -1,4 +1,3 @@
-```python
 from flask import Flask, jsonify
 import requests
 import threading
@@ -91,4 +90,3 @@ def get_stream():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
-```
