@@ -54,7 +54,7 @@ def get_stream():
             headers={
                 "Origin": "https://mitelefe.com",
                 "Referer": "https://mitelefe.com/telefe-en-vivo",
-                "User-Agent": "Mozilla/5.0",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
                 "Content-Type": "application/json",
                 "Accept": "*/*",
                 "Cookie": MITELEFE_COOKIE
