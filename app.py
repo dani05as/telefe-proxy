@@ -42,7 +42,7 @@ def get_stream():
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36',
                 'Content-Type': 'application/json',
                 'Accept': '*/*',
-                'Cookie': 'AWSALBTG=09rBCfKjYo6q0tnjBlDu8/k3KzBW6JUpRM96SqSCTv1UPRTcglkSbPGarkjM7WWrcI7wztenpVIA0k62rHgvevaMIffQBMq3l0FZ0s+9wutRDmwVS9ZhBHz2DEAIrV1FYis9HN7uGYBtcdQraoz43FlynESAhLz33I9il29SSz5CKOgNdXY=; AWSALBTGCORS=09rBCfKjYo6q0tnjBlDu8/k3KzBW6JUpRM96SqSCTv1UPRTcglkSbPGarkjM7WWrcI7wztenpVIA0k62rHgvevaMIffQBMq3l0FZ0s+9wutRDmwVS9ZhBHz2DEAIrV1FYis9HN7uGYBtcdQraoz43FlynESAhLz33I9il29SSz5CKOgNdXY=; AWSALB=r7TvJXf/gzLG2r3iA1ToeJf4T23h1LeuLuHIUOb6l6zfL9iTpZ/C4DakI6nYOA0iaw6V4DNsXXx76kfMU95FPaGBYKIYWPjnYdPXQ9UNjUb4TI+6OvQPr+v1gVko; AWSALBCORS=r7TvJXf/gzLG2r3iA1ToeJf4T23h1LeuLuHIUOb6l6zfL9iTpZ/C4DakI6nYOA0iaw6V4DNsXXx76kfMU95FPaGBYKIYWPjnYdPXQ9UNjUb4TI+6OvQPr+v1gVko'
+                'Cookie': 'AWSALBTG=wjj1MRXq66+MIqLv4iWZ+fn899nW9JX1Oo2bGRpvshb0N9CdYCRpB4gx+xTiSUiJ5tUQTUgdBCWKFX3By45M+tmcEht4kKRdaGhWpCWwXfTAfLFdS0yPL+XgmDdBvpBo8fmywBbkVa+n5B7BFkel9Y1PkN1zEP6zgybhPrB9QtLL/zGfxYU=; AWSALBTGCORS=wjj1MRXq66+MIqLv4iWZ+fn899nW9JX1Oo2bGRpvshb0N9CdYCRpB4gx+xTiSUiJ5tUQTUgdBCWKFX3By45M+tmcEht4kKRdaGhWpCWwXfTAfLFdS0yPL+XgmDdBvpBo8fmywBbkVa+n5B7BFkel9Y1PkN1zEP6zgybhPrB9QtLL/zGfxYU=; AWSALB=PPC6BlQmeyqbBnESHph9oIFLyaZBopr4HeYUeJltQZoEYIBFWtFQgrM9pqed/+N+4nBKow1NF0yUkqSRXMiWjG3hz87MClr2btEcvH05O/fnJEI3K4Rf9RWTSHk/; AWSALBCORS=PPC6BlQmeyqbBnESHph9oIFLyaZBopr4HeYUeJltQZoEYIBFWtFQgrM9pqed/+N+4nBKow1NF0yUkqSRXMiWjG3hz87MClr2btEcvH05O/fnJEI3K4Rf9RWTSHk/'
             },
             timeout=10
         )
