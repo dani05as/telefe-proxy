@@ -42,7 +42,7 @@ def get_stream():
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36',
                 'Content-Type': 'application/json',
                 'Accept': '*/*',
-                'Cookie': 'AWSALBTG=Hr7Rt66+SDcYHBPuteA/T8YkkC5MFpTM2KqMpulKX/unFdc9q5weGlj2mwqbixFMwexIJNTjhGJj6GbpjxwaqZCPhLoeARRZ3VBVrXzRbWCMvs+XEJwXl/yYdP0rebe45xjwkpDG41wwdb06NScH+Etu3N319xnL/zvO5laRgsQ78qU5Ub0=; AWSALBTGCORS=Hr7Rt66+SDcYHBPuteA/T8YkkC5MFpTM2KqMpulKX/unFdc9q5weGlj2mwqbixFMwexIJNTjhGJj6GbpjxwaqZCPhLoeARRZ3VBVrXzRbWCMvs+XEJwXl/yYdP0rebe45xjwkpDG41wwdb06NScH+Etu3N319xnL/zvO5laRgsQ78qU5Ub0=; AWSALB=GU+6BTcd2Md8yo64vGOAHxDLNpixd9PjDFBZ1Z+aUkfMxHZ4xHBtemyTX7wPDCSmYgSydeeBbz0H/Mj3N669F1QLoUh10rSbpIIi7icBO356W5MdaDzXp43En5Oq; AWSALBCORS=GU+6BTcd2Md8yo64vGOAHxDLNpixd9PjDFBZ1Z+aUkfMxHZ4xHBtemyTX7wPDCSmYgSydeeBbz0H/Mj3N669F1QLoUh10rSbpIIi7icBO356W5MdaDzXp43En5Oq'
+                'Cookie': 'AWSALBTG=09rBCfKjYo6q0tnjBlDu8/k3KzBW6JUpRM96SqSCTv1UPRTcglkSbPGarkjM7WWrcI7wztenpVIA0k62rHgvevaMIffQBMq3l0FZ0s+9wutRDmwVS9ZhBHz2DEAIrV1FYis9HN7uGYBtcdQraoz43FlynESAhLz33I9il29SSz5CKOgNdXY=; AWSALBTGCORS=09rBCfKjYo6q0tnjBlDu8/k3KzBW6JUpRM96SqSCTv1UPRTcglkSbPGarkjM7WWrcI7wztenpVIA0k62rHgvevaMIffQBMq3l0FZ0s+9wutRDmwVS9ZhBHz2DEAIrV1FYis9HN7uGYBtcdQraoz43FlynESAhLz33I9il29SSz5CKOgNdXY=; AWSALB=r7TvJXf/gzLG2r3iA1ToeJf4T23h1LeuLuHIUOb6l6zfL9iTpZ/C4DakI6nYOA0iaw6V4DNsXXx76kfMU95FPaGBYKIYWPjnYdPXQ9UNjUb4TI+6OvQPr+v1gVko; AWSALBCORS=r7TvJXf/gzLG2r3iA1ToeJf4T23h1LeuLuHIUOb6l6zfL9iTpZ/C4DakI6nYOA0iaw6V4DNsXXx76kfMU95FPaGBYKIYWPjnYdPXQ9UNjUb4TI+6OvQPr+v1gVko'
             },
             timeout=10
         )
@@ -50,8 +50,8 @@ def get_stream():
         url = data.get('url')
         if url:
             return jsonify({"stream_url": url})
-        enviar_telegram('⚠️ Telefe TV: Las cookies expiraron, hay que actualizarlas.')
+        enviar_telegram('⚠️ Mi Canal TV: Las cookies expiraron, hay que actualizarlas.')
         return jsonify({"error": "Stream no disponible"}), 503
     except Exception as e:
-        enviar_telegram(f'⚠️ Telefe TV: Error en el servidor: {str(e)}')
+        enviar_telegram(f'⚠️ Mi Canal TV: Error en el servidor: {str(e)}')
         return jsonify({"error": str(e)}), 503
