@@ -25,7 +25,7 @@ def enviar_telegram(mensaje):
 def keep_alive():
     while True:
         try:
-            requests.get("https://telefe-proxy.onrender.com/stream", timeout=10)
+            requests.get("https://telefe-proxy-11111.onrender.com/stream", timeout=10)
             print("Ping enviado")
         except:
             pass
