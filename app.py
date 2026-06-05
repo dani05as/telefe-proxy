@@ -6,6 +6,7 @@ import os
 
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
+MITELEFE_COOKIE = os.getenv("MITELEFE_COOKIE")
 
 app = Flask(__name__)
 
@@ -34,17 +35,9 @@ thread = threading.Thread(target=keep_alive)
 thread.daemon = True
 thread.start()
 
-def obtener_cookie_github():
-    r = requests.get(
-        "https://raw.githubusercontent.com/dani05as/mi-canal-config/main/cookies.json",
-        timeout=10
-    )
-    return r.json()["cookie"]
-
 @app.route("/stream")
 def get_stream():
     try:
-        cookie = obtener_cookie_github()
         response = requests.post(
             "https://mitelefe.com/vidya/tokenize",
             json={"url": "https://telefeappmitelefe1.akamaized.net/hls/live/2037985/appmitelefe/TOK/master.m3u8"},
@@ -54,7 +47,7 @@ def get_stream():
                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
                 "Content-Type": "application/json",
                 "Accept": "*/*",
-                "Cookie": cookie
+                "Cookie": MITELEFE_COOKIE
             },
             timeout=10
         )
